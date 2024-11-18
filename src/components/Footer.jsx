@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary011 p-8 rounded-t-lg">
+    <footer className="bg-primary011 p-8 rounded-t-lg w-screen">
       <motion.div
         className="container flex flex-col lg:flex-row items-start justify-start lg:justify-start lg:items-start"
         initial={{ opacity: 0 }}
@@ -36,39 +36,36 @@ const Footer = () => {
           transition={{ duration: 1 }}
         >
           <ul className="flex flex-col w-full font-stylishBold text-nowrap justify-start md:justify-start md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-            {[""].map(
-              (item, index) => (
-                <motion.li
-                  key={index}
-                  className="cursor-pointer text-white"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {item}
-                </motion.li>
-              )
-            )}
+            {[""].map((item, index) => (
+              <motion.li
+                key={index}
+                className="cursor-pointer text-white"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item}
+              </motion.li>
+            ))}
           </ul>
         </motion.nav>
       </motion.div>
 
       <motion.div
-        className="container flex flex-col-reverse md:flex-row justify-start gap-96 items-start mt-10"
+        className="container flex flex-col-reverse md:flex-row justify-start items-end mt-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         <motion.div
-          className="w-full md:w-1/2 flex justify-start items-start"
+          className="w-full md:w-1/2 flex justify-start h-full items-end"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-
-
-          <p className="text-sm text-white mt-36">
-          Developed by WebMinds <br />
-          Copyrights © 2024 ArtisanAntiques <br />All Rights reserved
+          <p className="text-sm text-white mt-3">
+            Developed by WebMinds <br />
+            Copyrights © 2024 ArtisanAntiques <br />
+            All Rights reserved
           </p>
         </motion.div>
 
@@ -80,19 +77,14 @@ const Footer = () => {
         >
           <div className="w-full flex justify-start">
             <div className="mb-0">
-              <h2 className="text-white font-stylishBold mb-4">
-                Contact Us
-              </h2>
+              <h2 className="text-white font-stylishBold mb-4">Contact Us</h2>
               <p className="text-white">+94 (76) 586-64-93</p>
-              <p className="text-white">admin@artisanantique.com
-              </p>
+              <p className="text-white">admin@artisanantique.com</p>
             </div>
           </div>
           <div className="w-full flex justify-start">
             <div className="m-0">
-              <h2 className="text-white font-stylishBold mb-4">
-                Location
-              </h2>
+              <h2 className="text-white font-stylishBold mb-4">Location</h2>
               <p className="text-white">
                 Nawala,Koswatta <br />
                 Colombo, Sri Lanka.

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/ArtisanWhite-Logo2.png"
+import logo from "../assets/ArtisanWhite-Logo2.png";
 const AnimatedCounter = ({ from, to, duration, isInView }) => {
   const [count, setCount] = useState(from);
 
@@ -29,15 +29,18 @@ const AboutUsSection = () => {
   const [isLogoVisible, setIsLogoVisible] = useState(true); // Track logo visibility
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (entry.target.id === "counter1") setIsInView1(true);
-          if (entry.target.id === "counter2") setIsInView2(true);
-          if (entry.target.id === "counter3") setIsInView3(true);
-        }
-      });
-    }, { threshold: 0.2 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target.id === "counter1") setIsInView1(true);
+            if (entry.target.id === "counter2") setIsInView2(true);
+            if (entry.target.id === "counter3") setIsInView3(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
     const counter1 = document.getElementById("counter1");
     const counter2 = document.getElementById("counter2");
@@ -70,21 +73,7 @@ const AboutUsSection = () => {
   }, []);
 
   return (
-    <section className="text-center h-fit py-8 px-8 lg:px-32 w-screen bg-primary011">
-      {/* Logo at the top-left */}
-      <motion.div
-        className={`logo ${isLogoVisible ? "visible" : "hidden"}`}
-        style={{
-          position: "fixed",
-          top: "20px",
-          right: "40px",
-          zIndex: 9999, // Ensure logo is above all other content
-          transition: "opacity 0.5s ease",
-        }}
-      >
-        <img src={logo} alt="Logo" style={{ width: "100px" }} />
-      </motion.div>
-
+    <section className="text-center h-fit py-8  px-8 lg:px-32 w-screen bg-primary011">
       <motion.div
         className="w-full flex flex-col lg:flex-row justify-between lg:items-end"
         initial={{ opacity: 0, y: 50 }}
@@ -150,7 +139,12 @@ const AboutUsSection = () => {
           transition={{ duration: 1 }}
         >
           <h2 className="text-[100px] text-white font-poppinsLight">
-            <AnimatedCounter from={0} to={100} duration={3} isInView={isInView1} />
+            <AnimatedCounter
+              from={0}
+              to={100}
+              duration={3}
+              isInView={isInView1}
+            />
             <span className="text-white">+</span>
           </h2>
           <p className="text-white text-sm">
@@ -166,7 +160,12 @@ const AboutUsSection = () => {
           transition={{ duration: 1 }}
         >
           <h2 className="text-[100px] text-white font-poppinsLight flex items-center justify-center">
-            <AnimatedCounter from={0} to={400} duration={3} isInView={isInView2} />
+            <AnimatedCounter
+              from={0}
+              to={400}
+              duration={3}
+              isInView={isInView2}
+            />
             <span className="text-white">+</span>
           </h2>
           <p className="text-white text-sm">
@@ -182,7 +181,12 @@ const AboutUsSection = () => {
           transition={{ duration: 1 }}
         >
           <h2 className="text-[100px] text-white font-poppinsLight">
-            <AnimatedCounter from={0} to={99} duration={3} isInView={isInView3} />
+            <AnimatedCounter
+              from={0}
+              to={99}
+              duration={3}
+              isInView={isInView3}
+            />
             <span className="text-white">%</span>
           </h2>
           <p className="text-white text-sm">

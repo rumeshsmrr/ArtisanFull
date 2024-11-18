@@ -4,8 +4,15 @@
 
 /* Font Face */
 @font-face {
-    font-family: 'Olivera';
-    src: url('../assets/Olivera.ttf') format('truetype'); /* Adjust the path if needed */
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Olivera";
+  src: url("../assets/Olivera.ttf") format("truetype"); /* Adjust the path if needed */
+  font-weight: 900;
+  font-style: normal;
+}
+root {
+  width: 100vw;
+}
+body,
+html {
+  overflow-x: hidden;
 }
