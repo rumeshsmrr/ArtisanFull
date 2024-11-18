@@ -13,7 +13,7 @@ const GridDisplay = () => {
       </div>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-12">
         {cards.map((card) => {
           return <Card card={card} key={card.id} />;
         })}
@@ -31,7 +31,7 @@ const Card = ({ card }) => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="group relative h-[450px] w-full overflow-hidden bg-neutral-200 rounded-xl transition-transform duration-300 group-hover:scale-105"
+      className="group relative h-[250px]  md:h-[450px] w-full overflow-hidden bg-neutral-200 rounded-xl transition-transform duration-300 group-hover:scale-105"
     >
       <div className="absolute inset-0 z-10 bg-gradient-to-br from-black/50 to-transparent" />
 
