@@ -1,0 +1,85 @@
+
+.section3-back {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+
+}
+
+.sec3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Square on the left */
+.square {
+    width: 50%; /* Adjust size as needed */
+    height: 70%; /* Square shape */
+    background-color: #3498db; /* Color for the square */
+    margin-left: 30px;
+    border-radius: 15px;
+    margin-right: 75px; /* Spacing between square and text */
+    background-image: url('../assets/0G3A1969.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially moved down */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+/* Apply fade-in animation when square comes into view */
+.square.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Text on the right */
+.text {
+    color: #ffffff; /* Text color */
+    margin-top: -50px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially moved down */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+.text.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.text h2 {
+    margin: 0 0 10px; /* Space below the heading */
+    font-size: 4rem; /* Adjust font size */
+    font-family: 'Olivera', sans-serif; /* Adjust font family as needed */
+    line-height: 1;
+}
+
+.text p {
+    margin: 0;
+    font-size: 1rem; /* Adjust font size */
+    font-family: 'Poppins', sans-serif; /* Adjust font family as needed */
+    font-weight: 100;
+    max-width: 600px;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .text h2 {
+        font-size: 2rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+    }
+
+    .square {
+        width: 100%; /* Full width for smaller screens */
+        height: 50%;
+        margin-right: 20px; /* Adjust right margin for better spacing */
+    }
+}

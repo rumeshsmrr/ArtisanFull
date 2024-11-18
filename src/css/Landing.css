@@ -1,0 +1,147 @@
+/* Font Face */
+@font-face {
+    font-family: 'Olivera';
+    src: url('../assets/Olivera.ttf') format('truetype'); /* Adjust the path if needed */
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Landing Section */
+.landing {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Background Fade-In */
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('../assets/main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: -1; /* Keeps background behind the content */
+    animation: fadeInBackground 2s ease-in-out forwards; /* Fade in the background */
+}
+
+/* Fade-In Animation for Background */
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+
+/* Logo Box Centering and Animation */
+.Logo-box {
+    width: 40%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeInContent 1.5s ease-in-out forwards; /* No delay */
+}
+
+/* Fade-In Animation for Logo Box */
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo Animation */
+.Logo {
+    width: 100%;
+    animation: fadeInLogo 4s ease-in-out forwards; /* No delay */
+}
+
+/* Fade-In Animation for Logo */
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Heading Styling */
+.Logo-box h1 {
+    color: aliceblue;
+    margin-top: 0;
+    font-size: 3.5rem;
+    font-family: 'Olivera', Poppins, sans-serif; /* Fallback fonts */
+    animation: fadeInText 3.5s ease-in-out forwards; /* No delay */
+}
+
+/* Fade-In Animation for Heading */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width:1024px) {
+    h1{
+        font-size: 3rem;
+    }
+
+    .Logo-box {
+        top: 55%;
+    }
+}
+
+@media (max-width:768px) {
+    .Logo-box h1{
+        font-size: 2rem;
+    }
+
+    .Logo-box {
+        top: 55%;
+    }
+}
+
+
+@media (max-width:425px) {
+    h1{
+        font-size: 2rem;
+    }
+
+    .Logo-box {
+        top: 55%;
+        width: 70%;
+    }
+}
+
+@media (max-width:375px) {
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .Logo-box {
+        top: 55%;
+        width: 70%;
+    }
+}
