@@ -9,7 +9,7 @@ const Preloader = ({ isVisible }) => {
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <img src={gif} alt="Loading..." className="w-2/6 h-auto" />
+      <img src={gif} alt="Loading..." className="w-4/5 md:w-2/6 h-auto" />
     </div>
   );
 };

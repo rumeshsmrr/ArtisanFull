@@ -1,147 +1,171 @@
 /* Font Face */
 @font-face {
-    font-family: 'Olivera';
-    src: url('../assets/Olivera.ttf') format('truetype'); /* Adjust the path if needed */
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Olivera";
+  src: url("../assets/Olivera.ttf") format("truetype"); /* Adjust the path if needed */
+  font-weight: 900;
+  font-style: normal;
 }
 
 /* Landing Section */
 .landing {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-/* Background Fade-In */
+/* Circle Background Animation */
 .landing::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background-image: url("../assets/main.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: expandCircle 3s ease-in-out forwards,
+    fadeOpacity 2s ease-in-out 3s forwards;
+}
+
+/* Expand Circle to Full Background */
+@keyframes expandCircle {
+  0% {
+    height: 50px;
+    width: 50px;
+    opacity: 1;
+  }
+  50% {
     height: 100%;
     width: 100%;
-    background-image: url('../assets/main.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    z-index: -1; /* Keeps background behind the content */
-    animation: fadeInBackground 2s ease-in-out forwards; /* Fade in the background */
+    border-radius: 50%;
+    opacity: 1;
+  }
+  100% {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    opacity: 1;
+  }
 }
 
-/* Fade-In Animation for Background */
-@keyframes fadeInBackground {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.5;
-    }
+/* Reduce Opacity Smoothly */
+@keyframes fadeOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
-
 
 /* Logo Box Centering and Animation */
 .Logo-box {
-    width: 40%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    animation: fadeInContent 1.5s ease-in-out forwards; /* No delay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: resizeLogoBox 3s ease-in-out forwards;
 }
 
-/* Fade-In Animation for Logo Box */
-@keyframes fadeInContent {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Resize Logo Box */
+@keyframes resizeLogoBox {
+  0% {
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    width: 40%;
+    height: 30%;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 /* Logo Animation */
 .Logo {
-    width: 100%;
-    animation: fadeInLogo 4s ease-in-out forwards; /* No delay */
+  width: 80%;
+  animation: resizeLogo 3s ease-in-out forwards;
 }
 
-/* Fade-In Animation for Logo */
-@keyframes fadeInLogo {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Resize Logo */
+@keyframes resizeLogo {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 /* Heading Styling */
 .Logo-box h1 {
-    color: aliceblue;
-    margin-top: 0;
+  color: aliceblue;
+  margin-top: 20px;
+  font-size: 10rem; /* Start larger */
+  font-family: "Olivera", Poppins, sans-serif; /* Fallback fonts */
+  animation: resizeText 3s ease-in-out forwards;
+}
+
+/* Resize Text */
+@keyframes resizeText {
+  0% {
+    font-size: 10rem;
+  }
+  100% {
     font-size: 3.5rem;
-    font-family: 'Olivera', Poppins, sans-serif; /* Fallback fonts */
-    animation: fadeInText 3.5s ease-in-out forwards; /* No delay */
+  }
 }
 
-/* Fade-In Animation for Heading */
-@keyframes fadeInText {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .Logo-box {
+    top: 55%;
+  }
 }
 
-@media (max-width:1024px) {
-    h1{
-        font-size: 3rem;
-    }
+@media (max-width: 768px) {
+  .Logo-box h1 {
+    font-size: 2rem;
+  }
 
-    .Logo-box {
-        top: 55%;
-    }
+  .Logo-box {
+    top: 55%;
+  }
 }
 
-@media (max-width:768px) {
-    .Logo-box h1{
-        font-size: 2rem;
-    }
+@media (max-width: 425px) {
+  h1 {
+    font-size: 2rem;
+  }
 
-    .Logo-box {
-        top: 55%;
-    }
+  .Logo-box {
+    top: 55%;
+    width: 70%;
+  }
 }
 
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 
-@media (max-width:425px) {
-    h1{
-        font-size: 2rem;
-    }
-
-    .Logo-box {
-        top: 55%;
-        width: 70%;
-    }
-}
-
-@media (max-width:375px) {
-    h1{
-        font-size: 1.5rem;
-    }
-
-    .Logo-box {
-        top: 55%;
-        width: 70%;
-    }
+  .Logo-box {
+    top: 55%;
+    width: 70%;
+  }
 }
