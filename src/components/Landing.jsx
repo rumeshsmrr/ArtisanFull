@@ -14,8 +14,17 @@ export default function Landing() {
         y: 0,
         duration: 0.5,
         ease: "power2.out",
-        stagger: 0.1, // Stagger the animation for each letter
+        stagger: 0.1,
         delay: 2,
+        onComplete: () => {
+          // Smooth scroll after animation using native scrollTo
+          setTimeout(() => {
+            window.scrollTo({
+              top: window.innerHeight, // Scroll down one viewport height
+              behavior: "smooth", // Smooth scrolling
+            });
+          }, 500); // Add a slight delay for better effect
+        },
       }
     );
   }, []);
@@ -32,7 +41,7 @@ export default function Landing() {
   return (
     <section className="landing">
       <div className="Logo-box">
-        <img className="Logo" src={logo} />
+        <img className="Logo" src={logo} alt="Artisan Antiques Logo" />
         <h1>{splitText("Artisan Antiques")}</h1>
       </div>
     </section>
