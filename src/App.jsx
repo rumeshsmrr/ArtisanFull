@@ -11,6 +11,7 @@ import Section6 from "./components/section6";
 import Section7 from "./components/section7";
 import LogoVisibility from "./components/LogoVisibility";
 import Preloader from "./components/Preloader";
+import LandingV2 from "./components/LandingV2";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +32,8 @@ function App() {
       ) : (
         <>
           <LogoVisibility />
-          <Landing />
+          {/* <Landing /> */}
+          <LandingV2 />
           <AboutUsSection />
           <Section3 />
           <Carousel />
