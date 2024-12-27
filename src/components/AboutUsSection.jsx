@@ -116,7 +116,7 @@ const AboutUsSection = () => {
         </div>
 
         <motion.p
-          className="text-white pt-2 font-poppinsBold text-xl mb-12 lg:w-[600px] text-end lg:text-start"
+          className="text-white pt-2 font-poppins Bold text-xl mb-12 lg:w-[600px] text-end lg:text-start"
           style={{ textIndent: "5rem" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -138,7 +138,7 @@ const AboutUsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-[100px] text-white font-poppinsLight">
+          <h2 className="text-[100px] text-white font-Poppins">
             <AnimatedCounter
               from={0}
               to={100}
