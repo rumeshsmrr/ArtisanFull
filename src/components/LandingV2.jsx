@@ -134,17 +134,17 @@ export default function LandingV2() {
         />
         {/* Logo and Text Row */}
         <div
-          className="flex flex-row items-center justify-center space-x-4  "
+          className="flex flex-row  items-center justify-center space-x-4  "
           ref={titleRef}
         >
           {/* Text Animations */}
 
           <div
-            className="font-primaryFont font-[Olivera]  text-5xl md:text-6xl lg:text-[180px] w-fit text-[#ebf4f5] leading-none"
+            className="font-primaryFont font-Olivera text-5xl md:text-6xl lg:text-[180px] w-fit text-[#ebf4f5] leading-none"
             ref={textRef1}
           ></div>
           <div
-            className="font-primaryFont font-[Olivera]  text-5xl md:text-6xl lg:text-[180px] bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] bg-clip-text text-transparent animate-gradient leading-none"
+            className="font-primaryFont font-Olivera text-5xl md:text-6xl lg:text-[180px] bg-gradient-to-r from-[#ebf4f5] to-[#b5c6e0] bg-clip-text text-transparent animate-gradient leading-none"
             ref={textRef2}
           ></div>
         </div>

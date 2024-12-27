@@ -57,7 +57,7 @@ function Section3() {
             className={`text1 ${isTextVisible ? "fade-in" : ""}`}
             ref={textRef}
           >
-            <h2>
+            <h2 className="font-Olivera">
               Carefully Handpicked
               <br /> from Across the Island.
             </h2>
