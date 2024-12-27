@@ -26,7 +26,7 @@ function Section3() {
             animate={isTextVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, ease: "easeInOut" }}
           >
-            <h2>
+            <h2 className="font-Olivera">
               Carrying Timeless <br />
               Craftsmanship to the Future.
             </h2>

@@ -105,7 +105,7 @@ const AboutUsSection = () => {
           </motion.div>
 
           <motion.h1
-            className="text-6xl w-[350px] md:w-[390px] text-left mt-2 text-white font-[Olivera] mb-4 text-wrap"
+            className="text-6xl w-[350px] md:w-[390px] text-left mt-2 text-white font-Olivera mb-4 text-wrap"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}

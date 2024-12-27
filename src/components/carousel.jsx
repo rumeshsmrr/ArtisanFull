@@ -7,7 +7,7 @@ const GridDisplay = () => {
     <section ref={targetRef} className="relative h-auto bg-black py-16">
       {/* Title on top */}
       <div className="text-center mb-8">
-        <h2 className="text-4xl text-white font-bold uppercase font-[Olivera]">
+        <h2 className="text-4xl text-white font-bold uppercase font-Olivera">
           Artisan Antiques
         </h2>
       </div>
