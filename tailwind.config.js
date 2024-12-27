@@ -3,9 +3,9 @@ export default {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        primaryFont: ["Olivera", "serif"],
-      },
+      // fontFamily: {
+      //   primaryFont: ["Olivera", "serif"],
+      // },
     },
   },
   plugins: [],
