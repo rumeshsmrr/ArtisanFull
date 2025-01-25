@@ -13,7 +13,7 @@ import LogoVisibility from "./components/LogoVisibility";
 import Preloader from "./components/Preloader";
 import LandingV2 from "./components/LandingV2";
 import Products from "./components/Products";
-import Timeline from "./components/Timeline";
+import Story from "./components/Story";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,7 +44,7 @@ function App() {
           <Section6 />
           <BigText />
           {/* <Section7 /> */}
-          <Timeline />
+          <Story />
           <Footer />
         </>
       )}
